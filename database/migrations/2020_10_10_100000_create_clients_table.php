@@ -17,8 +17,8 @@ class CreateClientsTable extends Migration
         
             $table->string('name');
             $table->integer('id')->primary();
-            $table->integer('shift_in')->default('7');
-            $table->integer('shift_out')->default('17');
+            // $table->integer('shift_in')->default('7');
+            // $table->integer('shift_out')->default('16');
            
         });
     } 

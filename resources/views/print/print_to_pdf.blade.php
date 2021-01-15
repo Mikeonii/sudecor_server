@@ -6,7 +6,7 @@
 		.wrapper{
 			display: grid;
 			grid-template-columns: 50% 50%;
-			max-width: 400px;
+			max-width: 1410px;
 		}
 		.wrapper > div{
 			background-color:#eee;
@@ -27,50 +27,29 @@
 		<h2>Name: {{$individual_info[0][0]->name}}</h2>
 		<h3>Shift-in: {{$individual_info[0][0]->shift_in}} Shift-out: {{$individual_info[0][0]->shift_out}}</h3>
 		<p>Attendance Table</p>
-	<div class="wrapper">
-		<div>
-			<table>
-			<thead>
-				<tr>
-					<td>Morning</td>
-					
-				</tr>
-			</thead>
-			<tbody>
-
-				@foreach($individual_info[2] as $row)
-				<tr>
-					<td>{{$row->date_time}}</td>
-					
-					
-				</tr>
-				@endforeach
-				
-			</tbody>
-			</table>
-		</div>
-		<div>
-			
-			<table>
-			<thead>
-				<tr>
-					<td>Afternoon</td>
-					
-				</tr>
-			</thead>
-			<tbody>
-
-				@foreach($individual_info[3] as $row)
-				<tr>
-					<td>{{$row->date_time}}</td>
-				</tr>
-				@endforeach
-				
-			</tbody>
-		</table>
-		</div>
-	</div>
+	
 	<div>
+	<table>
+		<tbody>
+
+		<tr>
+			<td>Morning</td>
+			<td>Afternoon</td>
+		</tr>
+		@foreach($individual_info[2] as $key=> $row)
+			
+		<tr>
+			<td>
+				{{$row[0]->date_time}}
+			</td>
+			<td>{{$row[1]->date_time}}</td>
+		</tr>
+				
+		@endforeach
+
+		</tbody>
+	</table>
+
 		<p>Attendance Summary</p>
 
 		@if(sizeof($individual_info[1]) == 0)

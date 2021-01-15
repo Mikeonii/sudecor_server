@@ -63,17 +63,19 @@ class ClientsController extends Controller
     public function store(Request $request)
     {
        $client =  $request->method('put') ? Client::findOrFail($request->input('client_id')) : "Error: it is not a put request";
-       $client->shift_in = $request->input('shift_in');
-       $client->shift_out = $request->input('shift_out');
+       // $client->shift_in = $request->input('shift_in');
+       // $client->shift_out = $request->input('shift_out');
+       $client->is_straight = $request->input('is_straight');
+       $client->is_morning_shift = $request->input('is_morning_shift');
 
+       $response = $request->input('is_straight') == true ? "1" : "0";
        if($client->save()){
-        return "saved";
+        return $response;
        } 
        else{
         return "not saved";
        }
 
-       
     }
 
     /**

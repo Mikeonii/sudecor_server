@@ -51,3 +51,5 @@ Route::post('/client_full_info',[AttendanceController::class,'client_full_info']
 Route::get('/create_clients',[AttendanceController::class,'create_clients']);
 
 Route::get('/export_clients',[FilesController::class,'export_clients']);
+// reset DB
+Route::delete('/reset',[AttendanceController::class,'reset']);

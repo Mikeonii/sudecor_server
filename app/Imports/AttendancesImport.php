@@ -24,6 +24,8 @@ class AttendancesImport implements ToModel
         $res1 = explode('/',$date);
         $res = $res1[2].'-'.$res1[1].'-'.$res1[0].' '.$time;
 
+   
+
         return new Attendance([
            'name'=>$row[0],
            'client_id'=>$row[1],
