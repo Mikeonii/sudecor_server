@@ -136,7 +136,7 @@ class AttendanceController extends Controller
                    // if half is two, loop within the month and next month from days 26 - 10
                     $day_start = 26;
                     $day_end = 31;
-                    // test
+                    
 
                     // calculate summary
                     $result = $this->calc($client,$year,$month,$day_start,$day_end,$half,$is_morning_shift);
