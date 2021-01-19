@@ -77,7 +77,7 @@ class ClientsController extends Controller
        }
 
     }
-
+    // changed
     /**
      * Display the specified resource.
      *
