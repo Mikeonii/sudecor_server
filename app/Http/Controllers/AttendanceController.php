@@ -113,7 +113,7 @@ class AttendanceController extends Controller
 
             $response = "";
            // ->where('id','1')
-            $clients = Client::select('id','is_straight','is_morning_shift')->get();
+            $clients = Client::select('id','is_straight','is_morning_shift')->where('id','43')->get();
             foreach($clients as $client){
                 $is_morning_shift = $client->is_morning_shift;
                 if($half == '1'){
@@ -144,7 +144,7 @@ class AttendanceController extends Controller
                     $day_start = 1;
                     $day_end = 10;
                     $next_month = $month+1;
-                    if($year == '12'){
+                    if($month == '12'){
                         $year = $year+=1;
                         $next_month = 1;
                     }
@@ -155,7 +155,9 @@ class AttendanceController extends Controller
                     foreach($x as $i){
                         $result[$i] = $result[$i]+=$result2[$i];
                     }
-                   
+                    
+
+                    // return $result; 
                     // insert into DB
                     $this->insert_calculations($result,$client,$year,$month,$half,$is_morning_shift);
                     
